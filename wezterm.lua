@@ -6,6 +6,7 @@ local config = wezterm.config_builder()
 -- System & Performance
 -- ========================================
 config.automatically_reload_config = false
+config.check_for_updates = false
 config.front_end = "OpenGL"
 config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo" }
 config.scrollback_lines = 5000
@@ -40,9 +41,12 @@ config.window_frame = {
 }
 
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-	local is_active = tab.is_active
-	local background = is_active and "#313244" or "#1e1e2e"
-	local foreground = is_active and "#cdd6f4" or "#7f849c"
+	local active_bg = "#313244"
+	local inactive_bg = "#1e1e2e"
+	local active_fg = "#cdd6f4"
+	local inactive_fg = "#7f849c"
+	local background = tab.is_active and active_bg or inactive_bg
+	local foreground = tab.is_active and active_fg or inactive_fg
 	local title = " " .. wezterm.truncate_right(tab.active_pane.title, max_width - 1) .. " "
 
 	return {
