@@ -1,3 +1,6 @@
+-- =======================================
+-- WezTerm Configuration File
+-- =======================================
 local wezterm = require("wezterm")
 local act = wezterm.action
 local config = wezterm.config_builder()
@@ -28,7 +31,7 @@ config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 config.font = wezterm.font_with_fallback({
 	{ family = "FiraCode Nerd Font Mono", weight = "Regular" },
 })
-config.font_size = 19.5
+config.font_size = 20
 
 -- ========================================
 -- Tab Bar Customization
@@ -60,7 +63,7 @@ end)
 -- Keybindings
 -- ========================================
 config.keys = {
-	{ key = "Enter", mods = "ALT", action = act.SplitPane({ direction = "Down", size = { Percent = 20 } }) },
+	{ key = "Enter", mods = "ALT", action = act.SplitPane({ direction = "Down", size = { Percent = 25 } }) },
 	{ key = "s", mods = "ALT", action = act.SplitPane({ direction = "Right", size = { Percent = 50 } }) },
 	{ key = "t", mods = "ALT", action = act.SpawnTab("CurrentPaneDomain") },
 	{ key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
