@@ -10,7 +10,7 @@ local config = wezterm.config_builder()
 -- ========================================
 config.automatically_reload_config = false
 config.check_for_updates = false
-config.front_end = "OpenGL"
+config.front_end = "OpenGL" -- "WebGpu" | "OpenGL" | "Software" 
 config.default_prog = { "C:\\Program Files\\PowerShell\\7\\pwsh.exe", "-NoLogo" }
 config.scrollback_lines = 5000
 
@@ -63,7 +63,7 @@ end)
 -- Keybindings
 -- ========================================
 config.keys = {
-	{ key = "Enter", mods = "ALT", action = act.SplitPane({ direction = "Down", size = { Percent = 25 } }) },
+	{ key = "Enter", mods = "ALT", action = act.SplitPane({ direction = "Down", size = { Percent = 35 } }) },
 	{ key = "s", mods = "ALT", action = act.SplitPane({ direction = "Right", size = { Percent = 50 } }) },
 	{ key = "t", mods = "ALT", action = act.SpawnTab("CurrentPaneDomain") },
 	{ key = "v", mods = "CTRL", action = act.PasteFrom("Clipboard") },
