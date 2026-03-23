@@ -68,7 +68,7 @@ config.keys = {
     -- Panes
     { key = "Enter",     mods = "ALT",        action = act.SplitPane({ direction = "Down", size = { Percent = 35 } }) },
     { key = "s",         mods = "ALT",        action = act.SplitPane({ direction = "Right", size = { Percent = 50 } }) },
-    { key = "w",         mods = "CTRL|ALT",   action = act.ActivateKeyTable({ name = "pane_nav", one_shot = true }) },
+    { key = "w",         mods = "CTRL",       action = act.ActivateKeyTable({ name = "pane_nav", one_shot = true }) },
 
     -- Tabs & Windows
     { key = "t",         mods = "ALT",        action = act.SpawnTab("CurrentPaneDomain") },
